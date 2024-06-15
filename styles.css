@@ -23,18 +23,20 @@ header {
 nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav ul li {
-  display: inline;
   margin: 0 10px;
+  padding: 0 10px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.6rem;
 }
 
 .section {
@@ -113,7 +115,7 @@ footer {
   top: 0;
   left: 0;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
-  animation: float 4s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .team-illustration::before {
@@ -125,7 +127,7 @@ footer {
   top: 0;
   left: 0;
   clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
-  animation: float 4s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .services-illustration::before {
@@ -137,7 +139,7 @@ footer {
   top: 0;
   left: 0;
   clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
-  animation: float 4s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .budget-illustration::before {
@@ -149,7 +151,7 @@ footer {
   top: 0;
   left: 0;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-  animation: float 4s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .strategy-illustration::before {
@@ -161,19 +163,7 @@ footer {
   top: 0;
   left: 0;
   clip-path: polygon(0 30%, 100% 0, 100% 70%, 0 100%);
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  animation: float 2s ease-in-out infinite;
 }
 
 .section.hide {
@@ -185,4 +175,63 @@ footer {
 .section.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 手機版樣式調整 */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  header {
+    padding: 1rem 0.5rem;
+  }
+
+  nav ul {
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .section {
+    padding: 20px 0;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-list {
+    columns: 1;
+  }
+
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service {
+    margin: 10px 0;
+    min-width: auto;
+  }
 }
